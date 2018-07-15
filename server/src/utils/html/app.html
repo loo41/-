@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>图书馆约座记录</title>
+  <style>
+    html body {
+      height: 100%;
+      background: #eeeeee
+    }
+    * {
+      margin: 0;
+      padding: 0;
+    }
+    .main {
+      width: 50%;
+      margin: 0 auto;
+    }
+    .logo {
+      height: 100px;
+      display: flex;
+      justify-content: flex-start;
+      align-items: flex-end;
+      box-sizing: border-box;
+      padding: 20px;
+      letter-spacing: 3px;
+      color: white;
+    }
+    .img {
+      max-height: 100%;
+      box-sizing: border-box;
+      padding-right: 5px;
+    }
+    .title {
+      height: 100px;
+      box-sizing: border-box;
+      padding: 20px;
+      background-color: #3aafec;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 25px;
+      letter-spacing: 3px;
+      color: white;
+    }
+    .body {
+      height: 300px;
+      background: white;
+    }
+    .display-box {
+      height: 50px;
+      display: flex;
+      font-size: 18px;
+    }
+    .display-box div:nth-child(1) {
+      display: flex;
+      justify-content: flex-start;
+      width: 30%;
+      align-items: center;
+      box-sizing: border-box;
+      padding-left: 5%;
+    }
+    .display-box div:nth-child(2) {
+      display: flex;
+      flex: 1;
+      justify-content: flex-start;
+      align-items: center;
+    }
+    .footer {
+      background: #3aafec;
+      color: white;
+      height: 50px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+  <div class="main">
+    <div class="logo">
+      阳光网站
+    </div>
+    <div class="title">
+      结果
+    </div>
+    <div class="body">
+      <div class="display-box">
+        <div>约座人:</div>
+        <div><%= data.username %> </div>
+      </div>
+      <div class="display-box">
+        <div>结果:</div>
+        <div><%= data.label %> </div>
+      </div>
+      <% if (data.label === 'bespeak_success') { %>
+        <div class="display-box">
+          <div>ID:</div>
+          <div><%= data.studentId %></div>
+        </div>
+        <div class="display-box">
+          <div>座位:</div>
+          <div><%= data.seatNum %></div>
+        </div>
+        <div class="display-box">
+          <div>教室:</div>
+          <div><%= data.readRoom %></div>
+        </div>
+        <div class="display-box">
+          <div>时间:</div>
+          <div><%= data.bespeakTime %> </div>
+        </div>
+      <% } %>
+    </div>
+    <div class="footer">祝你生活愉快</div>
+  </div>
+</body>
+</html>
